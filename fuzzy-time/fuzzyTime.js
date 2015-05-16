@@ -3,19 +3,31 @@ var fuzzyTime = function(timeString) {
 		var time = getTimeObject(timeString);
 
 		if (time.minute === 0) {
-			if (time.hour === 12) {
-				return "noon";
-			}
-			if (time.hour === 24) {
-				return "midnight";
-			}
-			return numberToString(time.hour) + " o'clock";	
+			return getTimeOnTheHour(time);
 		} else {
 			if (time.minute > 35) {
-				return numberToString(invertMinute(time.minute)) + ' till ' + numberToString(time.hour);	
+				return getTimeAfterTheHour(time);
 			}
-			return numberToString(time.minute) + ' past ' + numberToString(time.hour);	
+			return getTimeBeforeTheHour(time);
 		}
+	}
+
+	function getTimeOnTheHour(time) {
+		if (time.hour === 12) {
+			return "noon";
+		}
+		if (time.hour === 24) {
+			return "midnight";
+		}
+		return numberToString(time.hour) + " o'clock";	
+	}
+
+	function getTimeAfterTheHour(time) {
+		return numberToString(invertMinute(time.minute)) + ' till ' + numberToString(time.hour);	
+	}
+
+	function getTimeBeforeTheHour(time) {
+		return numberToString(time.minute) + ' past ' + numberToString(time.hour);	
 	}
 
 	function getTimeObject(timeString) {
