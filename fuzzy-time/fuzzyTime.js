@@ -1,12 +1,15 @@
 var fuzzyTime = function(timeString) {
-	var time = getTimeObject(timeString);
+	function getFuzzyTime(timeString) {
+		var time = getTimeObject(timeString);
+
+		return numberToString(time.hour) + " o'clock";	
+	}
 
 	function getTimeObject(timeString) {
 		var split = timeString.split(':');
 		return {
 			hour: split[0],
-			minute: split[0],
-			second: split[0]
+			minute: roundToNearestFive(split[0])
 		};
 	}
 
@@ -27,7 +30,11 @@ var fuzzyTime = function(timeString) {
 		return numbers[number];
 	}
 
-	return numberToString(time.hour) + " o'clock";
+	function roundToNearestFive(number) {
+		return number;
+	}
+
+	return getFuzzyTime(timeString);
 };
 
 module.exports = fuzzyTime;
