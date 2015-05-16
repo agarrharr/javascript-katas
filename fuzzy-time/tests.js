@@ -30,4 +30,7 @@ describe("fuzzyTime", function() {
 		expect(fuzzyTime('1:02')).to.equal("one o'clock");
 		expect(fuzzyTime('1:03')).to.equal("five past one");
 	});
+	it("should round to the next hour", function() {
+		expect(fuzzyTime('1:58')).to.equal("two o'clock");
+	});
 });
