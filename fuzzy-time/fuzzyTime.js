@@ -23,7 +23,7 @@ var fuzzyTime = function(timeString) {
 	}
 
 	function getTimeAfterTheHour(time) {
-		return numberToString(invertMinute(time.minute)) + ' till ' + numberToString(time.hour);	
+		return numberToString(invertMinute(time.minute)) + ' till ' + numberToString(time.hour + 1);	
 	}
 
 	function getTimeBeforeTheHour(time) {

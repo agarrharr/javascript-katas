@@ -33,4 +33,14 @@ describe("fuzzyTime", function() {
 	it("should round to the next hour", function() {
 		expect(fuzzyTime('1:58')).to.equal("two o'clock");
 	});
+	it("should return quarter and half", function() {
+		expect(fuzzyTime('1:30')).to.equal("half past one");
+		expect(fuzzyTime('1:15')).to.equal("quarter past one");
+	});
+	it("should return times before hour", function() {
+		expect(fuzzyTime('1:55')).to.equal("five till two");
+	});
+	it("should return quarter till", function() {
+		expect(fuzzyTime('1:45')).to.equal("quarter till two");
+	});
 });
