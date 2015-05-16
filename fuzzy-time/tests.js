@@ -26,4 +26,8 @@ describe("fuzzyTime", function() {
 		expect(fuzzyTime('12:00')).to.equal("noon");
 		expect(fuzzyTime('24:00')).to.equal("midnight");
 	});
+	it("should round to the nearst 5", function() {
+		expect(fuzzyTime('1:02')).to.equal("one o'clock");
+		expect(fuzzyTime('1:03')).to.equal("five past one");
+	});
 });

@@ -10,8 +10,9 @@ var fuzzyTime = function(timeString) {
 				return "midnight";
 			}
 			return numberToString(time.hour) + " o'clock";	
+		} else {
+			return numberToString(time.minute) + ' past ' + numberToString(time.hour);	
 		}
-		return '';
 	}
 
 	function getTimeObject(timeString) {
@@ -40,7 +41,7 @@ var fuzzyTime = function(timeString) {
 	}
 
 	function roundToNearestFive(number) {
-		return parseInt(number);
+		return 5 * Math.round(parseInt(number) / 5);
 	}
 
 	return getFuzzyTime(timeString);
