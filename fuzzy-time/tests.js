@@ -22,4 +22,8 @@ describe("fuzzyTime", function() {
 		expect(fuzzyTime('10:00')).to.equal("ten o'clock");
 		expect(fuzzyTime('11:00')).to.equal("eleven o'clock");
 	});
+	it("should return noon and midnight", function() {
+		expect(fuzzyTime('12:00')).to.equal("noon");
+		expect(fuzzyTime('24:00')).to.equal("midnight");
+	});
 });

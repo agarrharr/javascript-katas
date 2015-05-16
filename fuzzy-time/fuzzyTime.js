@@ -2,14 +2,23 @@ var fuzzyTime = function(timeString) {
 	function getFuzzyTime(timeString) {
 		var time = getTimeObject(timeString);
 
-		return numberToString(time.hour) + " o'clock";	
+		if (time.minute === 0) {
+			if (time.hour === 12) {
+				return "noon";
+			}
+			if (time.hour === 24) {
+				return "midnight";
+			}
+			return numberToString(time.hour) + " o'clock";	
+		}
+		return '';
 	}
 
 	function getTimeObject(timeString) {
 		var split = timeString.split(':');
 		return {
-			hour: split[0],
-			minute: roundToNearestFive(split[0])
+			hour: parseInt(split[0]),
+			minute: roundToNearestFive(split[1])
 		};
 	}
 
@@ -31,7 +40,7 @@ var fuzzyTime = function(timeString) {
 	}
 
 	function roundToNearestFive(number) {
-		return number;
+		return parseInt(number);
 	}
 
 	return getFuzzyTime(timeString);
