@@ -43,4 +43,8 @@ describe("fuzzyTime", function() {
 	it("should return quarter till", function() {
 		expect(fuzzyTime('1:45')).to.equal("quarter till two");
 	});
+	it("should return times after noon", function() {
+		expect(fuzzyTime('13:45')).to.equal("quarter till two");
+		expect(fuzzyTime('23:47')).to.equal("quarter till midnight");
+	});
 });

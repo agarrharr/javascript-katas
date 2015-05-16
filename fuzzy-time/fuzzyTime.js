@@ -13,21 +13,18 @@ var fuzzyTime = function(timeString) {
 	}
 
 	function getTimeOnTheHour(time) {
-		if (time.hour === 12) {
-			return "noon";
+		if (time.hour === 12 || time.hour === 24) {
+			return hourToString(time.hour);
 		}
-		if (time.hour === 24) {
-			return "midnight";
-		}
-		return numberToString(time.hour) + " o'clock";	
+		return hourToString(time.hour) + " o'clock";	
 	}
 
 	function getTimeAfterTheHour(time) {
-		return numberToString(invertMinute(time.minute)) + ' till ' + numberToString(time.hour + 1);	
+		return minuteToString(invertMinute(time.minute)) + ' till ' + hourToString(time.hour + 1);	
 	}
 
 	function getTimeBeforeTheHour(time) {
-		return numberToString(time.minute) + ' past ' + numberToString(time.hour);	
+		return minuteToString(time.minute) + ' past ' + hourToString(time.hour);	
 	}
 
 	function getTimeObject(timeString) {
@@ -43,7 +40,20 @@ var fuzzyTime = function(timeString) {
 		return timeObject;
 	}
 
-	function numberToString(number) {
+	function minuteToString(number) {
+		var numbers = {
+			5: 'five',
+			10: 'ten',
+			15: 'quarter',
+			20: 'twenty',
+			25: 'twenty-five',
+			30: 'half',
+			35: 'thirty-five'
+		};
+		return numbers[number];
+	}
+
+	function hourToString(number) {
 		var numbers = {
 			1: 'one',
 			2: 'two',
@@ -56,11 +66,19 @@ var fuzzyTime = function(timeString) {
 			9: 'nine',
 			10: 'ten',
 			11: 'eleven',
-			15: 'quarter',
-			20: 'twenty',
-			25: 'twenty-five',
-			30: 'half',
-			35: 'thirty-five'
+			12: 'noon',
+			13: 'one',
+			14: 'two',
+			15: 'three',
+			16: 'four',
+			17: 'five',
+			18: 'six',
+			19: 'seven',
+			20: 'eight',
+			21: 'nine',
+			22: 'ten',
+			23: 'eleven',
+			24: 'midnight'
 		};
 		return numbers[number];
 	}
