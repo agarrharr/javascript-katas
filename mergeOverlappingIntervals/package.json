@@ -1,0 +1,6 @@
+{
+  "name": "fuzzy-time",
+  "dependencies": {
+    "chai": "^2.3.0"
+  }
+}
