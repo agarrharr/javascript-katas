@@ -9,4 +9,11 @@ describe("merge", function() {
 	it("should return an array", function() {
 		expect(merge([])).to.be.an('array');
 	});
+	it("should return a single array", function() {
+		expect(merge([1, 2])).to.deep.equal([1, 2]);
+		expect(merge([2, 3])).to.deep.equal([2, 3]);
+	});
+	it("should return overlapping arrays", function() {
+		expect(merge([5, 12], [8, 10])).to.deep.equal([5, 12]);
+	});
 });
