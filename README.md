@@ -6,22 +6,22 @@ JavaScript practice exercises.
 
 Make sure you have npm installed and that you have mocha installed globally:
 
-```
+```bash
 npm install -g mocha
 ```
 
 In the directory of the exercise, run:
 
-```
+```bash
 npm install
 mocha tests.js
 ```
 
-## Fuzzy Time
+## [Fuzzy Time](fuzzy-time)
 
 Write a function that takes a time in a numeric format, such as '13:04', and returns the time as a string spelled out in english, such as 'five after 1'.
 
-## Merge Overlapping Intervals
+## [Merge Overlapping Intervals](merge-overlapping-intervals)
 
 [https://blog.svpino.com/2015/05/17/programming-challenge-merging-overlapping-intervals](https://blog.svpino.com/2015/05/17/programming-challenge-merging-overlapping-intervals)
 
