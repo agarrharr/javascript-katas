@@ -4,17 +4,11 @@ JavaScript practice exercises.
 
 ## How to run the tests
 
-Make sure you have npm installed and that you have mocha installed globally:
-
-```bash
-npm install -g mocha
-```
-
 In the directory of the exercise, run:
 
 ```bash
 npm install
-mocha tests.js
+npm test
 ```
 
 ## [Fuzzy Time](fuzzy-time)

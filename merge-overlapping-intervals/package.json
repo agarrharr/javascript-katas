@@ -1,6 +1,10 @@
 {
-  "name": "fuzzy-time",
-  "dependencies": {
-    "chai": "^2.3.0"
+  "name": "overlapping-intervals",
+  "scripts": {
+    "test": "mocha tests.js"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^6.1.4"
   }
 }
