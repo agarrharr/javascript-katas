@@ -1,0 +1,11 @@
+{
+  "name": "langtons-ant",
+  "scripts": {
+    "test": "mocha tests.js",
+    "test:watch": "npm test -- --watch"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "mocha": "^6.1.4"
+  }
+}

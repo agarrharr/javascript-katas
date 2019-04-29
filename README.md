@@ -25,6 +25,10 @@ For example, given [1, 3], [2, 6], [8, 10], and [7, 11], the function should pri
 
 You can assume that the first element of each interval is always less or equal than the second element of the interval.
 
+## [Langton's Ant](langtons-ant)
+
+From Cracking the Coding Interview
+
 # Ideas
 
 ## Celsius to Fahrenheit
